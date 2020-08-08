@@ -1,16 +1,277 @@
+/* Using RResponsive Typography through REM */
+/* Media Queries for Font Size */
+html {
+	font-family: Calibri, sans-serif;
+	line-height: normal;
+}
+
+/* Iphone */
+@media only screen and (min-width : 320px){
+	html{
+    	font-size: 10px;
+  	}
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px){
+	html{
+    	font-size: 11px;
+  	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px){
+	html{
+    	font-size: 13px;
+  	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px){
+	html{
+    	font-size: 14px;
+  	}
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px){
+	html{
+    	font-size: 15px;
+  	}
+}
+
+@media only screen and (min-width : 1400px){
+	html{
+    	font-size: 16px;
+  	}
+}
+
+@media only screen and (min-width : 1600px){
+	html{
+    	font-size: 17px;
+  	}
+}
+
+@media only screen and (min-width : 2000px){
+	html{
+    	font-size: 18px;
+  	}
+}
+
+
+/* Styles */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background-image: url("pictures/background_river.jpg");
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	background-size: cover;
+  	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+
+	height: 100vh;
+}
+
 body {
-  padding: 50px;
-  font-size: 50px;  
+	overflow-x: hidden;
+
+    width: 100%;
+	height: 100%;
+    box-sizing: border-box;
 }
 
-.flip {
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
+img {
+	user-drag: none; 
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+header {
+	font-size: 2.7rem;
+	text-align: center;
+	color: white;
+}
+
+footer {
+	font-size: 1.7rem;
+	text-align: center;
+	color: white;
+}
+
+/* Flex Setup */
+.flexSetup {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+  	align-items: stretch;
+  	align-content: stretch;
+  	justify-content: initial;
+
+  	width: 100vw;
+  	height: 100vh;
+}
+
+.topFlex {
+	flex: 1 1 auto;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+  	align-items: center;
+  	align-content: center;
+  	justify-content: center;
+
+	border-bottom-style: solid;
+	border-bottom-width: .2rem;
+	border-bottom-color: #6D6E71;
+	background-color: #0099CC;
+}
+
+.midFlex {
+	flex: 2 1 auto;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+  	align-items: center;
+  	align-content: center;
+  	justify-content: center;
+}
+
+.botFlex {
+	flex: 1 1 auto;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+  	align-items: center;
+  	align-content: center;
+  	justify-content: center;
+
+	border-top-style: solid;
+	border-top-width: .2rem;
+	border-top-color: #6D6E71;
+	background-color: #0099CC;
+}
+
+/* Memory Game */
+.game {
+	width: 38rem;
+	height: 38rem;
+
+	display: flex;
+	flex-wrap: wrap;
+
+	perspective:38rem;
+	-webkit-perspective:38rem;
+    -moz-perspective:38rem;
+    -ms-perspective:38rem;
+    -o-perspective:38rem;
+}
+
+.card {
+	position: relative;
+	margin: auto;
+	width: 8.33rem;
+	height: 11.67rem;
+
+	background-color: white;
+	border-radius: .5rem;
+
+    backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+    -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+    -o-backface-visibility:hidden;
+  
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+
+	transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+
+	transition: transform .2s;
+	-webkit-transition: transform .2s;
+	-moz-transition: transform .2s;
+	-ms-transition: transform .2s;
+	-o-transition: transform .2s;
+}
+
+.card > img{
+	position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	width: 8.33rem;
+	height: 11rem;
+}
+
+.card:hover {
+	cursor: pointer;
+
+	transform: scale(0.96);
+	-webkit-transform: scale(0.96);
+	-moz-transform: scale(0.96);
+	-ms-transform: scale(0.96);
+	-o-transform: scale(0.96);
+
+	transition: transform .2s;
+	-webkit-transition: transform .2s;
+	-moz-transition: transform .2s;
+	-ms-transition: transform .2s;
+	-o-transition: transform .2s;
+}
+
+.card.flip {
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+  	-ms-transform: rotateY(180deg);
+  	-o-transform: rotateY(180deg);
+
+	transition: transform .2s;
+	-webkit-transition: transform .2s;
+	-moz-transition: transform .2s;
+	-ms-transition: transform .2s;
+	-o-transition: transform .2s;
+}
+
+.front, .back {
+	position: absolute;
+  clear: both;
+	width: 100%;
+	height: 100%;
+
+	backface-visibility:hidden;
+	-webkit-backface-visibility:hidden;
+    -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+    -o-backface-visibility:hidden;
+    
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+}
+
+.front {
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
-}
-
-.flip.hide-back {
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility:    hidden;
-  -ms-backface-visibility:     hidden;
+  -o-transform: rotateY(180deg);
 }
